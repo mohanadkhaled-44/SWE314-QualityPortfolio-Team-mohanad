@@ -1,0 +1,30 @@
+#  Report
+
+## Project Name
+Library Management System
+
+## Project Overview
+The Library Management System is a web-based application that allows users to log in, search for books, borrow books, and return borrowed books. The system is designed as a simple Minimum Viable Product (MVP) focusing on core library operations.
+
+## Quality Attributes
+
+### 1. Usability
+The system should be easy to use and understand. Users should be able to search, borrow, and return books without difficulty.
+
+### 2. Reliability
+The system should correctly update book status when books are borrowed or returned to ensure accurate information.
+
+### 3. Security
+The system should protect user information and prevent unauthorized access to library data.
+
+## Possible Quality Risk
+
+Unauthorized access may allow users to view or modify information without permission.
+
+## Risk Mitigation
+
+The system should implement user authentication and validate user actions before allowing changes to data.
+
+## Conclusion
+
+The Library Management System focuses on usability, reliability, and security as its primary quality attributes. Addressing these attributes helps ensure a useful and dependable application for users.
