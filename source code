@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div id="loginSection">
+        <h1>Library Management System</h1>
+        <input type="text" id="username" placeholder="Enter Username">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="librarySection" style="display:none;">
+        <h2>Available Books</h2>
+
+        <input type="text" id="searchInput" placeholder="Search Book..." onkeyup="searchBooks()">
+
+        <div id="bookList"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.book {
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+const books = [
+    { title: "Clean Code", borrowed: false },
+    { title: "Software Engineering", borrowed: false },
+    { title: "Database Systems", borrowed: false },
+    { title: "Web Development", borrowed: false }
+];
+
+function login() {
+    const username = document.getElementById("username").value;
+
+    if (username.trim() !== "") {
+        document.getElementById("loginSection").style.display = "none";
+        document.getElementById("librarySection").style.display = "block";
+        displayBooks();
+    } else {
+        alert("Please enter a username");
+    }
+}
+
+function displayBooks(filteredBooks = books) {
+    const bookList = document.getElementById("bookList");
+    bookList.innerHTML = "";
+
+    filteredBooks.forEach((book, index) => {
+        bookList.innerHTML += `
+            <div class="book">
+                <h3>${book.title}</h3>
+                <p>Status: ${book.borrowed ? "Borrowed" : "Available"}</p>
+                <button onclick="toggleBorrow(${index})">
+                    ${book.borrowed ? "Return" : "Borrow"}
+                </button>
+            </div>
+        `;
+    });
+}
+
+function toggleBorrow(index) {
+    books[index].borrowed = !books[index].borrowed;
+    displayBooks();
+}
+
+function searchBooks() {
+    const searchValue = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const filtered = books.filter(book =>
+        book.title.toLowerCase().includes(searchValue)
+    );
+
+    displayBooks(filtered);
+}
