@@ -1,0 +1,53 @@
+Prompt Version 1
+
+Create a simple Library Management System using HTML, CSS, and JavaScript.
+
+The system should include:
+
+* Login page
+* List of books
+* Search for books
+* Borrow a book
+* Return a book
+
+Keep the design simple and beginner-friendly.
+
+AI Response
+
+The system will contain:
+
+* A login page for users.
+* A page displaying available books.
+* A search function to find books by title.
+* Borrow and return buttons for each book.
+* Basic HTML, CSS, and JavaScript implementation.
+
+
+Prompt Version 2
+
+Create a Minimum Viable Product (MVP) for a Library Management System using HTML, CSS, and JavaScript.
+
+Requirements:
+
+* Login page for users
+* Dashboard displaying available books
+* Search books by title
+* Borrow a book
+* Return a book
+* Display borrowed status for each book
+* Responsive and user-friendly interface
+* Use sample book data stored in JavaScript
+* Organize the code into separate HTML, CSS, and JS files
+* Include comments explaining the code
+
+AI Response
+
+The improved system will include:
+
+* User login interface.
+* Dashboard for managing books.
+* Search functionality by book title.
+* Borrow and return operations with status updates.
+* Responsive design for different screen sizes.
+* Separate HTML, CSS, and JavaScript files.
+* Sample data and code comments for maintainability.
